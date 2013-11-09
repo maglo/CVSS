@@ -94,6 +94,31 @@ inserted text to be properly formatted.
  1. The user modifies a mode-template file, using specific syntax to
     specify substitution fields and boilerplate text, headings and so
     forth.
+
+**** Examples
+
+Assume a template language where //// <attrib> //// is the substition syntax.
+
+Before (supplied by devs of CVSS):
+
+../templates/rst-template.markuplanguage:
+
+   **CVSS Base Score** //// cvss.basescore ////
+   **CVSS Environmental Score** //// cvss.envscore ////
+   **CVSS Temporal Score** //// cvss.tmpscore ////
+
+After (how the user really wants the text):
+
+../templates/rst-template.markuplanguage:
+
+   Calculated scores for vulnz
+   ===========================
+
+   *CVSS Base Score:* **//// cvss.basescore ////**
+   *CVSS Environmental Score:* **//// cvss.envscore ////**
+
+   .. note:: CVSS Temporal Scroes are not included in this analysis.
+
 *** How to test
     TBD
 
@@ -109,6 +134,24 @@ programmers of CVSS could not foresee the usage of.
  2. The user modifies the mode-template file, using specific syntax to
     specify substitution fields and boilerplate text, headings and so
     forth.
+
+**** Examples
+
+Assume a template language where //// <attrib> //// is the substition syntax.
+
+Before (supplied by devs of CVSS):
+
+../templates/rst-template.markuplanguage
+../templates/text-template.markuplanguage
+
+After
+
+../templates/rst-template.markuplanguage
+../templates/text-template.markuplanguage
+../templates/markdown-template.markuplanguage
+../templates/org-template.markuplanguage
+
+
 *** How to test
     TBD
 
